@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       "Secure; " +
                       "SameSite=Strict; " +
                       "max-age=3600"; // 1 hour expiration
-    
+
     initializeApplication();
 });
 
@@ -293,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function() {
                       "Secure; " +
                       "SameSite=Strict; " +
                       "max-age=3600"; // 1 hour expiration
-    
+
     initializeApplication();
 });
 
@@ -302,10 +302,10 @@ function initializeApplication() {
     const inputForm = document.getElementById('inputForm');
     const inputText = document.getElementById('inputText');
     const outputElement = document.getElementById('output');
-    
+
     // Add event listeners
     inputForm.addEventListener('submit', handleFormSubmit);
-    
+
     // For better UX, also validate on input
     inputText.addEventListener('input', function() {
         validateInput(this.value);
@@ -314,20 +314,20 @@ function initializeApplication() {
 
 function handleFormSubmit(event) {
     event.preventDefault();
-    
+
     const userInput = document.getElementById('inputText').value.trim();
     const outputElement = document.getElementById('output');
-    
+
     // Clear previous output
     outputElement.innerHTML = '';
-    
+
     // Validate input
     const validationResult = validateInput(userInput);
     if (!validationResult.isValid) {
         displayErrorMessage(outputElement, validationResult.message);
         return;
     }
-    
+
     // Process valid input
     displaySafeOutput(outputElement, userInput);
 }
@@ -339,7 +339,7 @@ function validateInput(input) {
             message: "Please enter some text."
         };
     }
-    
+
     // Check length
     if (input.length > 100) {
         return {
@@ -347,7 +347,7 @@ function validateInput(input) {
             message: "Input too long. Maximum 100 characters allowed."
         };
     }
-    
+
     // Whitelist validation pattern
     const allowedPattern = /^[a-zA-Z0-9\s\-_.,!?'"]*$/;
     if (!allowedPattern.test(input)) {
@@ -356,7 +356,7 @@ function validateInput(input) {
             message: "Invalid characters detected. Only letters, numbers, spaces, and basic punctuation (-_.,!?'\") allowed."
         };
     }
-    
+
     // Check for potential XSS patterns (defense in depth)
     const xssPatterns = [
         /<script/i,
@@ -367,7 +367,7 @@ function validateInput(input) {
         /window\./i,
         /alert\(/i
     ];
-    
+
     for (const pattern of xssPatterns) {
         if (pattern.test(input)) {
             return {
@@ -376,13 +376,13 @@ function validateInput(input) {
             };
         }
     }
-    
+
     return { isValid: true };
 }
 
 function htmlEncode(str) {
     if (!str) return '';
-    
+
     return String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
@@ -396,17 +396,17 @@ function displaySafeOutput(container, text) {
     // Create elements safely
     const paragraph = document.createElement('p');
     const strong = document.createElement('strong');
-    
+
     // Use textContent instead of innerHTML
     strong.textContent = text;
-    
+
     // Build DOM structure
     paragraph.appendChild(document.createTextNode('You entered: '));
     paragraph.appendChild(strong);
-    
+
     // Add to container
     container.appendChild(paragraph);
-    
+
     // For demonstration - show the encoded version
     const encodedInfo = document.createElement('div');
     encodedInfo.className = 'encoded-info';
@@ -422,10 +422,10 @@ function displayErrorMessage(container, message) {
     const errorDiv = document.createElement('div');
     errorDiv.className = 'error-message';
     errorDiv.setAttribute('role', 'alert');
-    
+
     // Use textContent for safety
     errorDiv.textContent = message;
-    
+
     // Add to container
     container.innerHTML = '';
     container.appendChild(errorDiv);
