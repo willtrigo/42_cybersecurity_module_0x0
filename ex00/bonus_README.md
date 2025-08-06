@@ -51,23 +51,23 @@ pip install -r ex00/requirements.txt
 ### 2. Run Basic Exploitation
 
 ```bash
-python3 xss_exploit.py
+python3 ex00/xss_exploit.py
 ```
 
 ### 3. Advanced Usage Options
 
 ```bash
 # Run with custom target URL
-python3 xss_exploit.py --target http://localhost:8080/
+python3 ex00/xss_exploit.py --target http://localhost:8080/
 
 # Run in headless mode (no browser window)
-python3 xss_exploit.py --headless
+python3 ex00/xss_exploit.py --headless
 
 # Enable verbose logging
-python3 xss_exploit.py --verbose
+python3 ex00/xss_exploi.py --verbose
 
 # Combine options
-python3 xss_exploit.py --headless --verbose
+python3 ex00/xss_exploit.py --headless --verbose
 ```
 
 ## Payload Types Tested
@@ -232,8 +232,7 @@ pip install --upgrade webdriver-manager
 
 ```bash
 # Ensure the vulnerable app is running
-cd cyber0x0.1.00/ex00/
-./start.sh
+cd ex00/cyber0x0.1.00; ./start.sh
 ```
 
 #### 3. Port Conflicts
@@ -247,14 +246,14 @@ lsof -i :8000
 
 ```bash
 # Make script executable
-chmod +x xss_exploit.py
+chmod +x ex00/xss_exploit.py
 ```
 
 ### Debug Mode
 
 ```bash
 # Run with maximum verbosity
-python3 xss_exploit.py --verbose
+python3 ex00/xss_exploit.py --verbose
 ```
 
 ## Professional Compliance
@@ -279,19 +278,6 @@ python3 xss_exploit.py --verbose
 - Industry-standard logging practices
 
 ## Integration with Main Project
-
-### File Structure
-
-```
-ex00/
-├── Readme.md          # Main vulnerability analysis
-├── Payloads.md        # Manual payload documentation
-├── Fix.md             # Remediation guide
-├── xss_exploit.py     # Automated testing script (BONUS)
-├── requirements.txt   # Python dependencies
-├── BONUS_README.md    # This documentation
-└── [generated files]  # Script output files
-```
 
 ### Validation Process
 

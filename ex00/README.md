@@ -12,16 +12,10 @@
 
 ### Setup Instructions
 
-1. **Navigate to Project Directory**
+1. **Start the Vulnerable Application**
 
    ```bash
-   cd cyber0x0.1.00/
-   ```
-
-2. **Start the Vulnerable Application**
-
-   ```bash
-   ./start.sh
+   cd cyber0x0.1.00/ex00/; ./start.sh
    ```
 
    Expected output:
@@ -35,7 +29,7 @@
    http://localhost:8000/
    ```
 
-3. **Access the Application**
+2. **Access the Application**
    - Open your web browser
    - Navigate to: `http://localhost:8000/`
    - You should see the vulnerable XSS application
@@ -171,7 +165,6 @@ Malicious actor embeds XSS payload in social media posts or emails:
 - Victims visit the vulnerable application
 - Script executes, redirecting to fake login pages
 - Credentials harvested for further attacks
-
 
 ## References
 
