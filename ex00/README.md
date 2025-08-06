@@ -172,6 +172,7 @@ Malicious actor embeds XSS payload in social media posts or emails:
 - Script executes, redirecting to fake login pages
 - Credentials harvested for further attacks
 
+
 ## References
 
 - [OWASP XSS Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html)

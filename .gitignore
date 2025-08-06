@@ -1,0 +1,9 @@
+err.log
+
+.venv/
+*.pyc
+__pycache__/
+
+xss_exploit.log
+xss_exploit_report.txt
+xss_exploit_results.json

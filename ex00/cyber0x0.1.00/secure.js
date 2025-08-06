@@ -25,7 +25,6 @@ function initializeApplication() {
     // Get DOM elements
     const inputForm = document.getElementById('inputForm');
     const inputText = document.getElementById('inputText');
-    const outputElement = document.getElementById('output');
 
     // Add event listeners
     inputForm.addEventListener('submit', handleFormSubmit);
