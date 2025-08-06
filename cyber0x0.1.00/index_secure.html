@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure XSS Example</title>
+    <meta http-equiv="Content-Security-Policy" 
+          content="default-src 'self';
+                  script-src 'self';
+                  style-src 'self' 'unsafe-inline';
+                  img-src 'self' data:;
+                  object-src 'none';
+                  frame-src 'none';
+                  base-uri 'self';
+                  form-action 'self'">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+</head>
+<body>
+    <header>
+        <h1>Secure Input Processing</h1>
+        <p>This page safely handles user input with advanced XSS protection.</p>
+    </header>
+
+    <main>
+        <form id="inputForm">
+            <label for="inputText">Enter some text (max 100 chars):</label>
+            <input type="text" id="inputText" maxlength="100" required
+                   aria-describedby="inputHelp">
+            <small id="inputHelp">Only letters, numbers, and basic punctuation allowed</small>
+            <button type="submit" id="submitButton">Submit Securely</button>
+        </form>
+
+        <section id="output" role="region" aria-live="polite">
+            <!-- Output will appear here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Secure application - Protected against XSS attacks</p>
+    </footer>
+
+    <!-- External JavaScript with all functionality -->
+    <script src="secure.js" defer></script>
+</body>
+</html>
