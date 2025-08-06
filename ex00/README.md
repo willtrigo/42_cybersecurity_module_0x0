@@ -1,6 +1,4 @@
-# 42_cybersecurity_0x0
-
-## XSS Vulnerability Analysis - Cybersecurity 0x0
+# XSS Vulnerability Analysis - Cybersecurity 0x0
 
 ## Usage
 
