@@ -41,7 +41,7 @@ The script uses `webdriver-manager` to automatically download and manage ChromeD
 
 ```bash
 # Ensure the vulnerable application is running
-cd cyber0x0.1.00/ex00/; ./start.sh
+(cd ex00/cyber0x0.1.00/; ./start.sh)
 
 # In another terminal, prepare the script
 source ex00/.venv/bin/activate
@@ -64,7 +64,7 @@ python3 ex00/xss_exploit.py --target http://localhost:8080/
 python3 ex00/xss_exploit.py --headless
 
 # Enable verbose logging
-python3 ex00/xss_exploi.py --verbose
+python3 ex00/xss_exploit.py --verbose
 
 # Combine options
 python3 ex00/xss_exploit.py --headless --verbose

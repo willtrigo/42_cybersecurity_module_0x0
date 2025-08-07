@@ -13,7 +13,7 @@
 1. **Start the Vulnerable Application**
 
    ```bash
-   cd cyber0x0.1.00/ex00/; ./start.sh
+   (cd ex00/cyber0x0.1.00/; ./start.sh)
    ```
 
    Expected output:
