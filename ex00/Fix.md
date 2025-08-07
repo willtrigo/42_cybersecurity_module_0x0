@@ -486,6 +486,5 @@ Object.freeze(Array.prototype);
 ### Security Tools
 
 - [OWASP ZAP](https://owasp.org/www-project-zap/)
-- [DOMPurify Library](https://github.com/cure53/DOMPurify)
 - [CSP Evaluator](https://csp-evaluator.withgoogle.com/)
 - [Security Headers Checker](https://securityheaders.com/)
