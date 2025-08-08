@@ -12,25 +12,25 @@
 
 1. **Start the Vulnerable Application**
 
-   ```bash
-   (cd ex00/cyber0x0.1.00/; ./start.sh)
-   ```
+```bash
+(cd ex00/cyber0x0.1.00/; ./start.sh)
+```
 
-   Expected output:
+Expected output:
 
-   ```bash
-   Cleaning Docker...
-   Creation of the website.
-   [+] Building 0.6s (9/9) FINISHED
-   [...]
-   You can connect on this website:
-   http://localhost:8000/
-   ```
+```bash
+Cleaning Docker...
+Creation of the website.
+[+] Building 0.6s (9/9) FINISHED
+[...]
+You can connect on this website:
+http://localhost:8000/
+```
 
 2. **Access the Application**
-   - Open your web browser
-   - Navigate to: `http://localhost:8000/`
-   - You should see the vulnerable XSS application
+- Open your web browser
+- Navigate to: `http://localhost:8000/`
+- You should see the vulnerable XSS application
 
 ### Testing the Payloads
 
@@ -107,21 +107,21 @@ The vulnerable application contains two critical security flaws:
 
 1. **Unsafe innerHTML Manipulation**:
 
-   ```javascript
-   document.getElementById("output").innerHTML = "<b>" + userInput + "</b>";
-   ```
+```javascript
+document.getElementById("output").innerHTML = "<b>" + userInput + "</b>";
+```
 
-   Direct concatenation of user input into innerHTML allows HTML/JavaScript injection.
+Direct concatenation of user input into innerHTML allows HTML/JavaScript injection.
 
 2. **Dynamic Script Element Creation**:
 
-   ```javascript
-   var script = document.createElement("script");
-   script.textContent = userInput;
-   document.body.appendChild(script);
-   ```
+```javascript
+var script = document.createElement("script");
+script.textContent = userInput;
+document.body.appendChild(script);
+```
 
-   Directly executes user-provided content as JavaScript code.
+Directly executes user-provided content as JavaScript code.
 
 ### Attack Surface
 
