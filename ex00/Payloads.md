@@ -56,23 +56,23 @@
 
 the application contains two critical vulnerabilities:
 
-   1 - **unsafe innerhtml usage**:
+1 - **unsafe innerhtml usage**:
 
 ```javascript
-   document.getelementbyid("output").innerhtml = "<b>" + userinput + "</b>";
+document.getelementbyid("output").innerhtml = "<b>" + userinput + "</b>";
 ```
 
-   allows html/javascript injection through dom manipulation.
+allows html/javascript injection through dom manipulation.
 
-   2 - **direct script element creation**:
+2 - **direct script element creation**:
 
 ```javascript
-   var script = document.createelement("script");
-   script.textcontent = userinput;
-   document.body.appendchild(script);
+var script = document.createelement("script");
+script.textcontent = userinput;
+document.body.appendchild(script);
 ```
 
-   directly executes user input as javascript code.
+directly executes user input as javascript code.
 
 ### attack scenarios
 
@@ -90,6 +90,6 @@ the application contains two critical vulnerabilities:
 
 ## testing environment
 
-- **browser**: [firefox v140.0.2]
-- **date**: [06/08/2025]
-- **tester**: [Daniel Trigo - dande-je]
+- **browser**: firefox v140.0.2
+- **date**: 06/08/2025
+- **tester**: Daniel Trigo - dande-je
