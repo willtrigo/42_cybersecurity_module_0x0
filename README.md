@@ -1,1 +1,1 @@
-# 42_cybersecurity_0x0
+# 42_cybersecurity_foundations_of_web_application_security_0x0
